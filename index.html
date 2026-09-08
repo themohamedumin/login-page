@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="login-page.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevMemory Login</title>
-    </style>
   </head>
   <body>
     <div class="login-shell">
@@ -20,14 +19,14 @@
 
         <div class="divider">or continue with email</div>
 
-        <form>
+        <form action="devmemory.html" method="get">
           <div class="field">
             <label class="label-row" for="email">Email Address</label>
             <div class="input-wrap">
               <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Zm2.1-.5 6.9 5.2 6.9-5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <input id="email" type="email" aria-label="Email Address" />
+              <input id="email" type="email" aria-label="Email Address" required />
             </div>
           </div>
 
@@ -40,7 +39,7 @@
               <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 10V8.5A5 5 0 0 1 12 3.5a5 5 0 0 1 5 5V10M6 10h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Zm6 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <input id="password" type="password" aria-label="Password" />
+              <input id="password" type="password" aria-label="Password" required />
             </div>
           </div>
 

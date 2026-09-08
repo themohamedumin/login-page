@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevMemory — Knowledge Engine</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-name">DevMemory</div>
+      <div class="brand-sub">Knowledge Engine</div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-page="dashboard">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </span>
+        Dashboard
+      </button>
+      <button class="nav-item" data-page="snippets">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 8 5 12 9 16"/><polyline points="15 8 19 12 15 16"/></svg>
+        </span>
+        Snippets
+      </button>
+      <button class="nav-item" data-page="concepts">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        Concepts
+      </button>
+      <button class="nav-item" data-page="settings">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        Settings
+      </button>
+    </nav>
+
+    <button class="record-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Record New Knowledge
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <label class="search" for="knowledgeSearch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="knowledgeSearch" type="search" placeholder="Search knowledge base... (Ctrl + K)" aria-label="Search knowledge base" />
+      </label>
+
+      <div class="topbar-right">
+        <div class="admin">
+          <span class="admin-label">Admin User</span>
+        </div>
+        <svg class="admin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.4 3.2-5.2 7-5.2s6.2 1.8 7 5.2" stroke-linecap="round"/></svg>
+      </div>
+    </header>
+
+    <!-- Dashboard page -->
+    <section class="page active" id="page-dashboard">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-sub">Overview of your knowledge base and recent activity.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-num">124</div><div class="stat-label">Total Solved</div></div>
+        <div class="stat-card"><div class="stat-num">342</div><div class="stat-label">Saved Snippets</div></div>
+        <div class="stat-card"><div class="stat-num">89</div><div class="stat-label">Concepts</div></div>
+        <div class="stat-card"><div class="stat-num">156</div><div class="stat-label">Bookmarks</div></div>
+      </div>
+
+      <h2 class="section-heading">Recent Solved Logs</h2>
+      <div class="log-card">
+        <h3 class="log-title">Spring Boot JWT Authentication Error</h3>
+        <div class="code-block"><span class="kw">private</span> SecretKey key = Keys.hmacShaKeyFor(
+    Decoders.BASE64.decode(envSecret)
+);</div>
+        <div class="log-tags">
+          <span class="tag">#SpringBoot</span>
+          <span class="tag">#JWT</span>
+          <span class="tag">#Java</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Snippets page -->
+    <section class="page" id="page-snippets">
+      <h1 class="page-title">Saved Snippets</h1>
+      <p class="page-sub">You have 142 code fragments in your memory bank.</p>
+
+      <div class="filter-row">
+        <div class="filter-item active">All</div>
+        <div class="filter-item">Recent</div>
+        <div class="filter-item">Favorites</div>
+        <div class="filter-item">JS/TS</div>
+        <div class="filter-item">Python</div>
+        <div class="filter-item">Rust</div>
+      </div>
+
+      <div class="card-grid">
+        <div class="snippet-card">
+          <h3 class="snippet-title">JS Debounce Function</h3>
+          <div class="snippet-code">const debounce = (func, wait) => { ...
+}</div>
+          <span class="tag">#utility</span>
+          <span class="tag">#frontend</span>
+        </div>
+        <div class="snippet-card">
+          <h3 class="snippet-title">PY Decorator for Logging</h3>
+          <div class="snippet-code">def log_execution(func): ...</div>
+          <span class="tag">#backend</span>
+          <span class="tag">#pythonic</span>
+        </div>
+        <div class="snippet-card">
+          <h3 class="snippet-title">RS Result Error Handling</h3>
+          <div class="snippet-code">fn read_username_from_file() -> Result</div>
+          <span class="tag">#rust</span>
+          <span class="tag">#systems</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concepts page -->
+    <section class="page" id="page-concepts">
+      <h1 class="page-title">Technical Concepts</h1>
+      <p class="page-sub">High-level architectural patterns and theoretical foundations.</p>
+
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h3 class="concept-title">Microservices Architecture</h3>
+          <p class="concept-desc">An architectural style that structures an application as a collection of loosely coupled services.</p>
+          <span class="tag">#Architecture</span>
+          <span class="tag">#DistributedSystems</span>
+        </div>
+        <div class="concept-card">
+          <h3 class="concept-title">OAuth2 Flow</h3>
+          <p class="concept-desc">An industry-standard protocol for authorization providing specific flows for web applications.</p>
+          <span class="tag">#Security</span>
+          <span class="tag">#Identity</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings page -->
+    <section class="page" id="page-settings">
+      <h1 class="page-title">Settings</h1>
+      <p class="page-sub">Manage your account preferences and environment setup.</p>
+
+      <div class="settings-layout">
+        <div class="settings-nav">
+          <div class="settings-nav-item active">Account</div>
+          <div class="settings-nav-item">Appearance</div>
+          <div class="settings-nav-item">Developer Preferences</div>
+          <div class="settings-nav-item">Notifications</div>
+        </div>
+
+        <div>
+          <div class="settings-panel">
+            <h2 class="panel-heading">Profile Information</h2>
+            <div class="field">
+              <label class="field-label">Full Name</label>
+              <input class="field-input" type="text" value="Jane Doe">
+            </div>
+            <div class="field">
+              <label class="field-label">Email Address</label>
+              <input class="field-input" type="email" value="jane.doe@example.com">
+            </div>
+          </div>
+
+          <div class="settings-panel">
+            <h2 class="panel-heading">Security</h2>
+            <p class="security-note">Two-Factor Authentication (2FA) is currently Enabled.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  const hamburger = document.getElementById('hamburger');
+  const searchInput = document.getElementById('knowledgeSearch');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+
+  hamburger.addEventListener('click', openSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  const navItems = document.querySelectorAll('.nav-item');
+  const pages = document.querySelectorAll('.page');
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navItems.forEach(n => n.classList.remove('active'));
+      item.classList.add('active');
+      const target = item.getAttribute('data-page');
+      pages.forEach(p => p.classList.toggle('active', p.id === 'page-' + target));
+      closeSidebar();
+      window.scrollTo(0, 0);
+    });
+  });
+
+  // Snippet filter tabs (visual only)
+  document.querySelectorAll('.filter-item').forEach(f => {
+    f.addEventListener('click', () => {
+      document.querySelectorAll('.filter-item').forEach(x => x.classList.remove('active'));
+      f.classList.add('active');
+    });
+  });
+
+  // Settings sub-nav (visual only)
+  document.querySelectorAll('.settings-nav-item').forEach(s => {
+    s.addEventListener('click', () => {
+      document.querySelectorAll('.settings-nav-item').forEach(x => x.classList.remove('active'));
+      s.classList.add('active');
+    });
+  });
+
+  // Close sidebar on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSidebar();
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+</script>
+
+</body>
+</html>
