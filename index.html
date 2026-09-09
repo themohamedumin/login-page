@@ -1,53 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevMemory Login</title>
-  </head>
-  <body>
-    <div class="login-shell">
-      <div class="brand">
-        <h1>DevMemory</h1>
-        <p>Sign in to your memory bank</p>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevMemory — Your memory bank for code</title>
+</head>
+<body>
+  <div class="landing">
+    <nav class="landing-nav">
+      <div class="brand-name">DevMemory</div>
+      <div class="landing-nav-links">
+        <a href="#features">Features</a>
+        <a href="login.html">Sign in</a>
+        <a class="btn-primary" href="login.html">Get started</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <p class="hero-kicker">For developers, by developers</p>
+        <h1>Every Bug Fix You've Found, Just ONE Search Away</h1>
+        <p class="lede">DevMemory is where you keep the problems you've fixed, the snippets you reuse, and the concepts you had to relearn — so next time, you just search for it.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="login.html">Get started free</a>
+          <a class="btn-secondary" href="#features">See what's inside</a>
+        </div>
       </div>
 
-      <div class="card">
-        <button class="social-btn" type="button">Continue with GitHub</button>
-        <button class="social-btn" type="button">Continue with Google</button>
+      <div class="demo-card">
+        <div class="demo-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span id="demoQuery"></span><span class="demo-cursor"></span>
+        </div>
+        <div class="demo-result" id="demoResult">
+          <h3 class="demo-result-title" id="demoTitle"></h3>
+          <div class="demo-code" id="demoCode"></div>
+          <div class="demo-meta" id="demoMeta"></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="divider">or continue with email</div>
+    <p class="disclaimer">DevMemory isn't trying to replace <strong>Google</strong>, <strong>Stack Overflow</strong>, <strong>GitHub</strong>, or your docs. It's for the knowledge that's already yours — the fix you found at 2am, the snippet you keep rewriting, the concept that finally clicked.</p>
 
-        <form action="devmemory.html" method="get">
-          <div class="field">
-            <label class="label-row" for="email">Email Address</label>
-            <div class="input-wrap">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Zm2.1-.5 6.9 5.2 6.9-5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <input id="email" type="email" aria-label="Email Address" required />
-            </div>
-          </div>
+    <div class="before-after">
+      <div class="ba-chaos">
+        <div class="ba-chip" style="--r:-6deg;">
+          <img src="https://cdn.simpleicons.org/googlechrome" alt="Chrome logo" />
+          <span>Re-googling it</span>
+        </div>
+        <div class="ba-chip" style="--r:4deg;">
+          <img src="https://cdn.simpleicons.org/stackoverflow" alt="Stack Overflow logo" />
+          <span>Old forum threads</span>
+        </div>
+        <div class="ba-chip" style="--r:-4deg;">
+          <img src="https://cdn.simpleicons.org/googledocs" alt="Google Docs logo" />
+          <span>Buried docs</span>
+        </div>
+        <div class="ba-chip" style="--r:5deg;">
+          <img src="https://cdn.simpleicons.org/googlekeep" alt="Google Keep logo" />
+          <span>A sticky note somewhere</span>
+        </div>
+        <div class="ba-chip" style="--r:-3deg;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111615.png" alt="Slack logo" onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/slack';" />
+          <span>That Slack DM from 2024</span>
+        </div>
+      </div>
 
-          <div class="field">
-            <div class="label-row">
-              <label for="password">Password</label>
-              <a href="#">Forgot password?</a>
-            </div>
-            <div class="input-wrap">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10V8.5A5 5 0 0 1 12 3.5a5 5 0 0 1 5 5V10M6 10h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Zm6 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <input id="password" type="password" aria-label="Password" required />
-            </div>
-          </div>
+      <div class="ba-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+      </div>
 
-          <button class="signin-btn" type="submit">Sign In →</button>
-        </form>
-
-        <div class="signup">Don't have an account? <a href="#">Sign up</a></div>
+      <div class="ba-clean">
+        <div class="ba-clean-brand">DevMemory</div>
+        <div class="demo-search" style="margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          JWT 403
+        </div>
+        <div class="ba-clean-title">Found in one search</div>
+        <div class="ba-clean-sub">The fix you already wrote, right where you left it.</div>
       </div>
     </div>
-  </body>
+
+    <div id="features">
+      <p class="section-label">Everything in one place</p>
+      <h2 class="section-title">One home for what you already know</h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <h3>Problems</h3>
+          <p>Record the error, the cause, what you tried, and what actually fixed it.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3>Snippets</h3>
+          <p>Save reusable code with language and context, ready to paste next time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z"/></svg></div>
+          <h3>Concepts</h3>
+          <p>Write down the explanations that took you a while to really understand.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg></div>
+          <h3>Projects</h3>
+          <p>Group problems, snippets and concepts around what you're actually building.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg></div>
+          <h3>Bookmarks</h3>
+          <p>Keep the outside links worth keeping, next to the knowledge they support.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 22 15 16.41M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z"/></svg></div>
+          <h3>Tags</h3>
+          <p>Label anything, filter fast, and find your way back by however you think.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h3>Global search</h3>
+          <p>One search box across every problem, snippet, concept and bookmark you own.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></div>
+          <h3>Dashboard</h3>
+          <p>A quick read on how much you've captured, and what you added most recently.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h2>Start keeping what you learn.</h2>
+      <p>Free to use. Your knowledge stays yours — no one else can see it.</p>
+      <a class="btn-primary" href="login.html">Create your account</a>
+    </div>
+
+    <footer class="landing-footer">
+      <div class="footer-brand-column">
+        <div class="footer-brand">DevMemory</div>
+        <p class="footer-quote">“The best documentation is the problem you already solved.”</p>
+        <span class="footer-quote-credit">For developers who learn by building</span>
+      </div>
+
+      <div class="footer-links-column">
+        <p class="footer-heading">Product</p>
+        <a href="#features">Features</a>
+        <a href="login.html">Get started</a>
+        <a href="login.html">Sign in</a>
+        <a href="#features">Dashboard</a>
+      </div>
+
+      <div class="footer-links-column">
+        <p class="footer-heading">Your memory</p>
+        <a href="app.html">Problems</a>
+        <a href="app.html">Snippets</a>
+        <a href="app.html">Concepts</a>
+        <a href="app.html">Bookmarks</a>
+      </div>
+
+      <div class="footer-links-column">
+        <p class="footer-heading">DevMemory for</p>
+        <a href="#features">Solo developers</a>
+        <a href="#features">Side projects</a>
+        <a href="#features">Learning in public</a>
+        <a href="#features">Teams</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 DevMemory</span>
+        <span>Built for developers who fix things twice too many times.</span>
+        <a class="footer-language" href="#top" aria-label="Back to top">Back to top ↑</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const examples = [
+      {
+        query: 'JWT 403',
+        title: 'Spring Boot JWT returns 403 on valid token',
+        code: '<span class="kw">if</span> (jwt.<span class="fn">isExpired</span>()) { <span class="kw">throw new</span> AuthException(); }',
+        meta: 'Cause: clock skew between services · Solved <span>4 months ago</span>'
+      },
+      {
+        query: 'debounce',
+        title: 'Debounced search input (vanilla JS)',
+        code: '<span class="kw">function</span> <span class="fn">debounce</span>(fn, delay) { <span class="kw">let</span> t; ... }',
+        meta: 'Tagged javascript, snippet · Solved <span>2 weeks ago</span>'
+      },
+      {
+        query: 'upsert',
+        title: 'Postgres unique constraint fails silently on upsert',
+        code: '<span class="kw">INSERT INTO</span> users (...) <span class="kw">ON CONFLICT</span> (email) <span class="kw">DO UPDATE</span> ...',
+        meta: 'Cause: missing ON CONFLICT clause · Solved <span>1 month ago</span>'
+      }
+    ];
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const queryEl = document.getElementById('demoQuery');
+    const resultEl = document.getElementById('demoResult');
+    const titleEl = document.getElementById('demoTitle');
+    const codeEl = document.getElementById('demoCode');
+    const metaEl = document.getElementById('demoMeta');
+
+    function renderStatic(ex) {
+      queryEl.textContent = ex.query;
+      titleEl.textContent = ex.title;
+      codeEl.innerHTML = ex.code;
+      metaEl.innerHTML = ex.meta;
+      resultEl.classList.add('show');
+    }
+
+    function typeLoop(index) {
+      const ex = examples[index];
+      queryEl.textContent = '';
+      resultEl.classList.remove('show');
+      let charIndex = 0;
+
+      const typing = setInterval(() => {
+        queryEl.textContent = ex.query.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex >= ex.query.length) {
+          clearInterval(typing);
+          setTimeout(() => {
+            titleEl.textContent = ex.title;
+            codeEl.innerHTML = ex.code;
+            metaEl.innerHTML = ex.meta;
+            resultEl.classList.add('show');
+            setTimeout(() => {
+              resultEl.classList.remove('show');
+              setTimeout(() => typeLoop((index + 1) % examples.length), 500);
+            }, 2600);
+          }, 350);
+        }
+      }, 85);
+    }
+
+    if (reduceMotion) {
+      renderStatic(examples[0]);
+    } else {
+      typeLoop(0);
+    }
+  </script>
+</body>
 </html>
